@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>Dice Game</title> -->
+    <title>Dice Game</title>
+    <!-- <link rel = "icon" href ="./images/dice-solid.svg" type = "image/x-icon">  -->
+    <link rel="icon" href="./images/Dice-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <div class="start-game-container">
+        <div class="start-game1">
+            <h2>Game Instruction:</h2>
+            <ul class="start-game-list">
+                <li>In your turn-roll the dice (at least once) and accumulate the result in "current"</li>
+                <li>You can roll again or click "Hold" to save the points from "Current" and end the turn</li>
+                <li>Note! If you get 6-6 - you will lose all points from "current" and the turn will go to your
+                    opponent.
+                </li>
+                <li>If you managed to reach exactly the target score - you win! If you passed it - you loose...</li>
+            </ul>
+        </div>
+
+        <div class="start-game2">
+            <h3>Please select a target score</h3>
+            <input type="number" class="target-score" value="100">
+            <button class="start-game-button">START GAME</button>
+        </div>
+
+    </div>
+    <div class="game-in-progress-container">
+
+        <div class="player player1-container">
+            <h1>PLAYER 1</h1>
+            <h1 class="score-1">0</h1>
+            <div class="current">
+                <h2 class="message1">message1</h2>
+                <h2>CURRENT</h2>
+                <h2 class="current-points-1">0</h2>
+            </div>
+        </div>
+
+        <div class="player player2-container">
+            <h1>PLAYER 2</h1>
+            <h1 class="score-2">0</h1>
+            <div class="current">
+                <h2 class="message1">message2</h2>
+                <h2>CURRENT</h2>
+                <h2 class="current-points-2">0</h2>
+            </div>
+        </div>
+
+        <div class="game-buttons-container">
+            <button class="button" id="new-game-button"> 🔁NEW GAME</button>
+            <img class="dice-img" id="img1" src="./images/dice-1.png" alt="dice-img">
+            <img class="dice-img" id="img2" src="./images/dice-2.png" alt="dice-img">
+            <button class="button" id="roll-dice-button">🎲ROLL DICE</button>
+            <button class="button" id="hold-button">HOLD</button>
+
+        </div>
+
+    </div>
+
+    <script src="./game.js"></script>
+</body>
+
+</html>
