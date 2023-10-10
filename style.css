@@ -11,13 +11,13 @@ body {
 }
 
 .start-game-container {
-    position:absolute;
+    position: absolute;
     top: 10px;
     left: 15%;
     height: 85%;
     width: 70%;
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 100px;
@@ -27,14 +27,16 @@ body {
     /* display: none; */
     z-index: 20;
 }
-.start-game2{
+
+.start-game2 {
     width: 220px;
     /* border: solid saddlebrown 2px; */
     display: flex;
-    justify-content:center;
+    justify-content: center;
     flex-direction: column;
 }
-.target-score{
+
+.target-score {
     cursor: pointer;
     margin-top: 40px;
     text-align: center;
@@ -42,14 +44,15 @@ body {
 
 
 
-.game-in-progress-container{
-    
+.game-in-progress-container {
+
     position: relative;
     /* border: solid green 2px; */
     height: 100%;
-    align-items:center; 
+    align-items: center;
 }
-.player{
+
+.player {
     width: 500px;
     height: 100%;
     border: solid saddlebrown 1px;
@@ -57,37 +60,59 @@ body {
     z-index: -1;
 
 }
-.dice-img{
+
+.dice-img {
     height: 100px;
     width: 100px;
     border: blue solid 1px;
 }
-.game-buttons-container{
+
+.game-buttons-container {
     position: absolute;
-    left:40%;
+    left: 40%;
     width: 250px;
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content:center;
-    align-items:center; 
+    justify-content: center;
+    align-items: center;
     gap: 15px;
     /* border: red solid 5px; */
     z-index: 10;
-        
+
 }
-.button{
+
+.button {
     width: 100px;
     cursor: pointer;
 }
-.player1-container{
+
+.player1-container {
     position: absolute;
     top: 0;
     left: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 150px;
 }
 
-.player2-container{
+.player2-container {
     position: absolute;
     top: 0;
     right: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 150px;
+}
+
+.message1 {
+    display: none;
+}
+
+.message2 {
+    display: none;
 }
