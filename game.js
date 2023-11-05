@@ -36,10 +36,10 @@ let plyer2TotalScore;
 let roundScore1;
 let roundScore2;
 // firstCase secondCase
-const WinLossMessage = [["You Win!", "Passed the target score"], ["You Win!,you reachd the target score", "You lose"]]
+const winLossMessage = [["You Win!", "Passed the target score"], ["You Win! you reachd the target score", "You lose"]]
 
 startGameButton.addEventListener("click", () => {
-    targetScore = targetScoreInput.value;
+    targetScore = parseInt(targetScoreInput.value);
     console.log(targetScore);
     if (targetScore > 0) {
         startTheGame();
@@ -53,13 +53,13 @@ function startTheGame() {
     gameOn = true;
     turn = 1;
     plyer1TotalScore = 0;
-    score1.textContent=0;
+    score1.textContent = 0;
     plyer2TotalScore = 0;
-    score2.textContent=0;
+    score2.textContent = 0;
     roundScore1 = 0;
-    currentPoints1.textContent=0;
+    currentPoints1.textContent = 0;
     roundScore2 = 0;
-    currentPoints2.textContent=0;
+    currentPoints2.textContent = 0;
 }
 //call play for playerNumber and updates the appropriate data
 function play(playerNumber) {
@@ -107,6 +107,7 @@ holdButton.addEventListener('click', () => {
 newGameButton.addEventListener('click', () => {
     startGame1.style.display = "none";
     startGameContainer.style.display = "block";
+    startGame2.style.margin="auto";
 })
 
 function changeTurns() {
@@ -116,12 +117,14 @@ function changeTurns() {
         roundScore1 = 0;
         currentPoints1.textContent = roundScore1;
         turn = 2;
+        changeOpacity(turn);
     } else if (turn == 2) {
         plyer2TotalScore += roundScore2;
         score2.textContent = plyer2TotalScore;
         roundScore2 = 0;
         currentPoints2.textContent = roundScore2;
         turn = 1;
+        changeOpacity(turn);
     }
     console.log('the turn--->', turn);
 }
@@ -133,11 +136,14 @@ const randomizeNumbers = () => {
 }
 function CallWinner() {
     let messageNum;
+    console.log(`typofplyer1TotalScore=${typeof (plyer1TotalScore)}`, `targetScore=${typeof (targetScore)}`)
+
     if (plyer2TotalScore > targetScore) {
         winnerPlayer = 1;
         messageNum = 0;
         gameOn = false;
     } else if (plyer1TotalScore === targetScore) {
+        console.log("hi from===+_+_+_+_target")
         winnerPlayer = 1;
         messageNum = 1;
         gameOn = false;
@@ -145,12 +151,10 @@ function CallWinner() {
         winnerPlayer = 2;
         messageNum = 0;
         gameOn = false;
-        writeWinnerLoserMessage(2, 0);
     } else if (plyer2TotalScore === targetScore) {
         winnerPlayer = 2;
-        messageNum = 0;
+        messageNum = 1;
         gameOn = false;
-        writeWinnerLoserMessage(2, 1);
     }
 
     if (!gameOn) {
@@ -160,15 +164,26 @@ function CallWinner() {
 
 function writeWinnerLoserMessage(playerNumber, messageNum) {
     if (playerNumber === 1) {
-        message1.textContent = WinLossMessage[messageNum][0];
-        message2.textContent = WinLossMessage[messageNum][1];
-
+        message1.textContent = winLossMessage[messageNum][0];
+        message2.textContent = winLossMessage[messageNum][1];
     } else if (playerNumber === 2) {
-        message2.textContent = WinLossMessage[messageNum][0];
-        message1.textContent = WinLossMessage[messageNum][1];
+        message2.textContent = winLossMessage[messageNum][0];
+        message1.textContent = winLossMessage[messageNum][1];
     }
     message1.style.display = "block";
     message2.style.display = "block";
+    changeOpacity(playerNumber);
+}
+
+function changeOpacity(playerNumber) {
+    if (playerNumber === 1) {
+        player1Container.style.opacity = "0.8"
+        player2Container.style.opacity = "0.4"
+    } else if (playerNumber === 2) {
+        player1Container.style.opacity = "0.4"
+        player2Container.style.opacity = "0.8"
+
+    }
 }
 
 

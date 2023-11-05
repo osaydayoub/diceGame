@@ -7,12 +7,16 @@
 body {
     height: 100vh;
     width: 100%;
-    border: solid 3px black;
+    /* background: linear-gradient(#2E3192, #1BFFFF); */
+    /* background: linear-gradient(to right,#2E3192, #1BFFFF); */
+    background: linear-gradient(to right,#11998E, #38EF7D);
+
+
 }
 
 .start-game-container {
     position: absolute;
-    top: 10px;
+    top: 5%;
     left: 15%;
     height: 85%;
     width: 70%;
@@ -22,7 +26,8 @@ body {
     flex-direction: column;
     gap: 100px;
     padding: 20px;
-    border: solid black 2px;
+    border: solid #151B54 5px;
+    border-radius: 25px;
     background-color: aliceblue;
     /* display: none; */
     z-index: 20;
@@ -31,6 +36,7 @@ body {
 .start-game2 {
     width: 220px;
     /* border: solid saddlebrown 2px; */
+    /* margin: auto; */
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -53,9 +59,9 @@ body {
 }
 
 .player {
-    width: 500px;
+    width: 35%;
     height: 100%;
-    border: solid saddlebrown 1px;
+    background-color: white;
     text-align: center;
     z-index: -1;
 
@@ -64,12 +70,13 @@ body {
 .dice-img {
     height: 100px;
     width: 100px;
-    border: blue solid 1px;
+    border: #151B54 solid 2px;
 }
 
 .game-buttons-container {
-    position: absolute;
-    left: 40%;
+    /* position: absolute;
+    left: 40%; */
+    margin: auto;
     width: 250px;
     height: 100%;
     display: flex;
@@ -90,23 +97,25 @@ body {
 .player1-container {
     position: absolute;
     top: 0;
-    left: 10%;
+    left: 15%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 150px;
+    opacity: 0.8;
 }
 
 .player2-container {
     position: absolute;
     top: 0;
-    right: 10%;
+    right: 15%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 150px;
+    opacity: 0.4;
 }
 
 .message1 {
